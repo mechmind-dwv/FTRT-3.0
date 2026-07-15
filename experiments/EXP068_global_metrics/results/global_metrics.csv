@@ -1,0 +1,12 @@
+metric,value
+timestamp,2026-07-15T10:13:58.797854+00:00
+events_total,71
+events_with_ftrt,8
+ftrt_coverage_percent,11.268
+LOW,4
+MODERATE,0
+HIGH,0
+EXTREME,4
+UNKNOWN,63
+regions,9
+top_region,14479
