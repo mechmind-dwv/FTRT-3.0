@@ -53,8 +53,8 @@ with open(OUTPUT, "w", newline="", encoding="utf-8") as out:
     print("EXP090 FTRT SSN CROSS LAG")
     print("=" * 72)
 
-    best_lag = None
-    best_r = -999
+    best_lag = 0
+    best_r = 0.0
 
     for lag in range(-30, 31):
 
