@@ -46,7 +46,7 @@ for start in range(0, len(df) - WINDOW):
         if np.isnan(r):
             continue
 
-        if best_lag == 0 && best_r == 0.0 or abs(r) > abs(best_r):
+        if (best_lag == 0 and best_r == 0.0) or abs(r) > abs(best_r):
             best_r = float(r)
             best_lag = lag
 
