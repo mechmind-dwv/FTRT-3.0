@@ -1,0 +1,12 @@
+{
+ "experiment":"EXP015",
+ "model":"hybrid_linear",
+ "input":"results/csv/ftrt_index_v2.csv",
+ "target":"ssn_future_30d",
+ "features":[
+   "ssn",
+   "ftrt_index_v2",
+   "ssn_mean_30d"
+ ],
+ "output":"experiments/EXP015_hybrid_model/results/"
+}

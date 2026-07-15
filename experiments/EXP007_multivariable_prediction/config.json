@@ -1,0 +1,5 @@
+{
+  "experiment":"EXP007",
+  "input":"results/csv/ftrt_silso.csv",
+  "output":"experiments/EXP007_multivariable_prediction/results/"
+}

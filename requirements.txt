@@ -1,0 +1,14 @@
+numpy
+scipy
+pandas
+matplotlib
+astropy
+skyfield
+requests
+jupyter
+pytest
+scikit-learn
+h5py
+pyyaml
+rich
+typer

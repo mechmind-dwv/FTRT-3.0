@@ -1,0 +1,11 @@
+FTRT Scientific Laboratory
+
+Geometry Dataset
+
+Ephemerides : JPL DE440s
+Engine       : Skyfield
+Python       : 3.14
+Dataset      : 2020-01-01 -> 2026-12-31
+Records      : 2557
+
+Status : REPRODUCIBLE

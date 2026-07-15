@@ -1,0 +1,7 @@
+{
+  "experiment": "EXP001",
+  "title": "Geometry vs Sunspots",
+  "dataset_geometry": "results/csv/ftrt_geometry_2020_2026.csv",
+  "dataset_silso": "data/silso/silso_daily.csv",
+  "output": "experiments/EXP001_geometry_vs_sunspots/results/"
+}

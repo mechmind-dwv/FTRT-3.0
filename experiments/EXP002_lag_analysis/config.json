@@ -1,0 +1,6 @@
+{
+  "experiment":"EXP002",
+  "lags":90,
+  "input":"results/csv/ftrt_silso.csv",
+  "output":"experiments/EXP002_lag_analysis/results/"
+}

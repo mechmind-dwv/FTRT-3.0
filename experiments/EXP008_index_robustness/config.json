@@ -1,0 +1,6 @@
+{
+ "experiment":"EXP008",
+ "input":"results/csv/ftrt_index_v2.csv",
+ "output":"experiments/EXP008_index_robustness/results/",
+ "bootstrap":1000
+}

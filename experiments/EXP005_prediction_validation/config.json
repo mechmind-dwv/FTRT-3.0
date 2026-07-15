@@ -1,0 +1,9 @@
+{
+  "experiment":"EXP005",
+  "train_start":"2020-01-01",
+  "train_end":"2024-12-31",
+  "test_start":"2025-01-01",
+  "test_end":"2026-12-31",
+  "input":"results/csv/ftrt_silso.csv",
+  "output":"experiments/EXP005_prediction_validation/results/"
+}

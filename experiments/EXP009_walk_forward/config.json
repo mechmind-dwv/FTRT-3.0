@@ -1,0 +1,6 @@
+{
+ "experiment":"EXP009",
+ "input":"results/csv/ftrt_index_v2.csv",
+ "windows":[180,365],
+ "output":"experiments/EXP009_walk_forward/results/"
+}
