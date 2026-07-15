@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# EXP083 - Precursor Window Risk Analysis
+# EXP083.1 - Precursor Window Risk Analysis FIX
 
 import csv
 from pathlib import Path
@@ -22,26 +22,11 @@ OUTPUT.parent.mkdir(parents=True, exist_ok=True)
 
 
 def parse_date(x):
-    return datetime.fromisoformat(
-        x[:10]
+    return datetime.strptime(
+        x,
+        "%Y-%m-%d"
     ).date()
 
-
-def get_ftrt(row):
-
-    for key in ["ftrt","FTRT","ftrt_index"]:
-
-        if key in row:
-
-            try:
-                return float(row[key])
-            except:
-                return 0
-
-    return 0
-
-
-# cargar serie FTRT
 
 ftrt = {}
 
@@ -52,72 +37,65 @@ with open(FTRT_FILE,newline="") as f:
     for r in reader:
 
         try:
-
-            d = parse_date(
-                r["date"]
+            ftrt[
+                parse_date(r["fecha"])
+            ] = float(
+                r["ftrt_index_v2"]
             )
-
-            ftrt[d] = get_ftrt(r)
 
         except:
             pass
 
 
-results=[]
 
-
-windows=[
-    -7,
-    -3,
-    -1,
-    0
-]
-
+events=[]
 
 with open(EVENT_FILE,newline="") as f:
 
     reader=csv.DictReader(f)
 
+    for r in reader:
 
-    for event in reader:
-
-        try:
-
-            date=parse_date(
-                event["date"]
-            )
-
-        except:
-
-            continue
+        events.append(r)
 
 
-        region = event.get(
-            "region_activa",
-            "UNKNOWN"
+
+windows=[-7,-3,-1,0]
+
+
+results=[]
+
+
+for e in events:
+
+    event_date=parse_date(
+        e["fecha"]
+    )
+
+    region=e["region_activa"]
+
+
+    for lag in windows:
+
+        target=event_date + timedelta(
+            days=lag
+        )
+
+        value=ftrt.get(
+            target,
+            0
         )
 
 
-        for lag in windows:
+        results.append(
+            {
+                "event_date":str(event_date),
+                "region":region,
+                "lag_days":lag,
+                "ftrt":value
+            }
+        )
 
-            target = date + timedelta(
-                days=lag
-            )
-
-            value=ftrt.get(
-                target,
-                0
-            )
-
-
-            results.append(
-                {
-                    "event_date":str(date),
-                    "region":region,
-                    "lag_days":lag,
-                    "ftrt":value
-                }
-            )
 
 
 with open(OUTPUT,"w",newline="") as f:
@@ -148,8 +126,9 @@ with open(OUTPUT,"w",newline="") as f:
         )
 
 
+
 print("="*72)
-print("EXP083 PRECURSOR WINDOW ANALYSIS")
+print("EXP083.1 PRECURSOR WINDOW ANALYSIS FIX")
 print("="*72)
 
 
@@ -162,7 +141,7 @@ for lag in windows:
     ]
 
     hits=sum(
-        1 for v in values if v>1.5
+        1 for x in values if x>1.5
     )
 
     print(
@@ -171,7 +150,7 @@ for lag in windows:
         "days:",
         "events=",
         len(values),
-        "FTRT hits=",
+        "hits=",
         hits
     )
 
