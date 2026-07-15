@@ -1,0 +1,7 @@
+cluster,lag_min,lag_max,windows,mean_r,max_r
+Carrington (~27),24,30,12,-0.082195,0.678505
+2x Carrington (~54),51,57,24,0.585605,0.640356
+3x Carrington (~81),78,84,4,0.291746,0.595325
+4x Carrington (~108),105,111,81,0.588826,0.838724
+5x Carrington (~135),132,138,268,-0.00863,0.867596
+Semiannual (~182),175,180,0,0.0,0.0
