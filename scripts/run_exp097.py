@@ -23,8 +23,8 @@ for start in range(0, len(df) - WINDOW):
 
     sub = df.iloc[start:start + WINDOW].copy()
 
-    best_lag = None
-    best_r = -999.0
+    best_lag = 0
+    best_r = 0.0
 
     for lag in range(-MAX_LAG, MAX_LAG + 1):
 
@@ -46,7 +46,7 @@ for start in range(0, len(df) - WINDOW):
         if np.isnan(r):
             continue
 
-        if abs(r) > abs(best_r):
+        if best_lag == 0 && best_r == 0.0 or abs(r) > abs(best_r):
             best_r = float(r)
             best_lag = lag
 
