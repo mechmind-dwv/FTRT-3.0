@@ -1,0 +1,11 @@
+metric,value
+timestamp,2026-07-15T10:05:05.484411+00:00
+events_total,71
+events_with_ftrt,8
+ftrt_mean,4.651241
+ftrt_std,3.2404904378808816
+ftrt_min,1.513223
+ftrt_max,7.742445
+ftrt_median,4.6127205
+p25,1.6763352500000002
+p75,7.742445
