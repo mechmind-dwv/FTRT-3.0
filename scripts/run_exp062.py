@@ -6,7 +6,7 @@ Descarga y normaliza eventos solares DONKI
 
 from pathlib import Path
 import csv
-from datetime import datetime
+from datetime import datetime, timezone
 
 
 OUT = Path(
@@ -44,7 +44,7 @@ def main():
         ])
 
         w.writerow([
-            datetime.utcnow().isoformat(),
+            datetime.now(timezone.utc).isoformat(),
             str(source),
             len(rows)
         ])
