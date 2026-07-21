@@ -1,0 +1,429 @@
+.
+├── PROJECT_TREE.txt
+├── README.md
+├── VERSION
+├── bootstrap_termux.sh
+├── data
+│   ├── cache
+│   ├── catalog
+│   │   ├── archive
+│   │   ├── donki_catalog.csv
+│   │   ├── master_catalog.csv
+│   │   └── solar_event_catalog.csv
+│   ├── cme
+│   ├── ephemerides
+│   ├── external
+│   ├── goes
+│   │   └── goes_xray_events.json
+│   ├── jpl
+│   ├── noaa
+│   │   └── donki_flares.json
+│   ├── omni
+│   ├── processed
+│   ├── raw
+│   ├── silso
+│   │   ├── SN_d_tot_V2.0.csv
+│   │   └── silso_daily.csv
+│   └── solar_events
+│       └── x_flares.csv
+├── de440s.bsp
+├── docs
+│   └── VALIDATION_PROTOCOL.md
+├── experiments
+│   ├── EXP001_geometry_vs_sunspots
+│   │   ├── README.md
+│   │   ├── config.json
+│   │   ├── data
+│   │   ├── figures
+│   │   └── results
+│   ├── EXP002_lag_analysis
+│   │   ├── README.md
+│   │   ├── config.json
+│   │   ├── data
+│   │   ├── figures
+│   │   └── results
+│   ├── EXP003_significance
+│   │   ├── figures
+│   │   └── results
+│   ├── EXP003_temporal_validation
+│   │   ├── figures
+│   │   └── results
+│   ├── EXP004_montecarlo
+│   │   ├── figures
+│   │   └── results
+│   ├── EXP005_prediction_validation
+│   │   ├── README.md
+│   │   ├── config.json
+│   │   ├── data
+│   │   ├── figures
+│   │   └── results
+│   ├── EXP006_lag_prediction
+│   │   ├── data
+│   │   ├── figures
+│   │   └── results
+│   ├── EXP007_multivariable_prediction
+│   │   ├── README.md
+│   │   ├── config.json
+│   │   ├── data
+│   │   ├── figures
+│   │   └── results
+│   ├── EXP008_index_robustness
+│   │   ├── README.md
+│   │   ├── config.json
+│   │   ├── data
+│   │   ├── figures
+│   │   └── results
+│   ├── EXP009_walk_forward
+│   │   ├── config.json
+│   │   ├── data
+│   │   ├── figures
+│   │   └── results
+│   ├── EXP010_regimes
+│   │   ├── data
+│   │   ├── figures
+│   │   └── results
+│   ├── EXP011_classification
+│   │   ├── data
+│   │   ├── figures
+│   │   └── results
+│   ├── EXP013_baselines
+│   │   ├── data
+│   │   ├── figures
+│   │   └── results
+│   ├── EXP015_hybrid_model
+│   │   ├── config.json
+│   │   ├── data
+│   │   ├── figures
+│   │   └── results
+│   ├── EXP016_ablation
+│   │   ├── data
+│   │   ├── figures
+│   │   └── results
+│   ├── EXP017_multivariate_regression
+│   │   ├── data
+│   │   ├── figures
+│   │   └── results
+│   ├── EXP018_feature_significance
+│   │   ├── data
+│   │   ├── figures
+│   │   └── results
+│   ├── EXP019_temporal_cv
+│   │   ├── data
+│   │   ├── figures
+│   │   └── results
+│   ├── EXP020_bootstrap_coefficient
+│   │   ├── data
+│   │   ├── figures
+│   │   └── results
+│   ├── EXP021_autocorrelation_control
+│   │   ├── data
+│   │   ├── figures
+│   │   └── results
+│   ├── EXP022_block_permutation
+│   │   ├── data
+│   │   ├── figures
+│   │   └── results
+│   ├── EXP023_cycle_validation
+│   │   ├── data
+│   │   ├── figures
+│   │   └── results
+│   ├── EXP044_pr.png
+│   ├── EXP044_roc.png
+│   ├── EXP051_goes_classification
+│   │   └── results
+│   ├── EXP052_cme_association
+│   │   └── results
+│   ├── EXP053_bootstrap
+│   │   └── results
+│   ├── EXP054_permutation
+│   │   └── results
+│   ├── EXP055_roc_pr
+│   │   └── results
+│   ├── EXP056_walk_forward
+│   │   └── results
+│   ├── EXP057_probabilistic
+│   │   └── results
+│   ├── EXP058_operational_prediction
+│   │   └── results
+│   ├── EXP059_report
+│   │   └── results
+│   ├── EXP060_pipeline
+│   │   └── results
+│   ├── EXP061_join_expansion
+│   │   └── results
+│   ├── EXP062_auto_download
+│   │   └── results
+│   ├── EXP063_auto_update
+│   │   └── results
+│   ├── EXP064_master_catalog
+│   │   └── results
+│   ├── EXP065_global_statistics
+│   │   └── results
+│   ├── EXP066_active_regions
+│   │   └── results
+│   ├── EXP067_prediction_history
+│   │   └── results
+│   ├── EXP068_global_metrics
+│   │   └── results
+│   ├── EXP069_final_report
+│   │   └── results
+│   ├── EXP070_autonomous_lab
+│   │   └── results
+│   ├── EXP070_full_pipeline
+│   │   └── results
+│   ├── EXP071_null_model_validation
+│   │   └── results
+│   ├── EXP072_monte_carlo_null
+│   │   └── results
+│   ├── EXP073_threshold_sweep
+│   │   └── results
+│   ├── EXP074_lag_analysis
+│   │   └── results
+│   ├── EXP075_region_persistence
+│   │   └── results
+│   ├── EXP076_leave_region_out
+│   │   └── results
+│   ├── EXP077_region_contribution
+│   │   └── results
+│   ├── EXP078_region_temporal_memory
+│   │   └── results
+│   ├── EXP079_region_activity_correlation
+│   │   └── results
+│   ├── EXP080_composite_risk_index
+│   │   └── results
+│   ├── EXP081_risk_validation
+│   │   └── results
+│   ├── EXP082_risk_memory_model
+│   │   └── results
+│   ├── EXP083_precursor_window
+│   │   └── results
+│   ├── EXP084_precursor_persistence
+│   │   └── results
+│   ├── EXP085_active_region_control
+│   │   └── results
+│   ├── EXP086_rotation_memory
+│   │   └── results
+│   ├── EXP087_carrington_memory
+│   │   └── results
+│   ├── EXP088_solar_long_memory
+│   │   └── results
+│   ├── EXP089_solar_autocorrelation
+│   │   └── results
+│   ├── EXP090_cross_lag
+│   │   └── results
+│   ├── EXP091_ftrt_goes_crosslag
+│   │   └── results
+│   ├── EXP092_goes_energy_crosslag
+│   │   └── results
+│   ├── EXP093_cycle_phase_crosslag
+│   │   └── results
+│   ├── EXP094_rolling_correlation
+│   │   └── results
+│   ├── EXP095_lag_distribution
+│   │   └── results
+│   ├── EXP096_extended_crosslag
+│   │   └── results
+│   ├── EXP097_crosslag_180
+│   │   └── results
+│   ├── EXP098_lag_timeline
+│   │   └── results
+│   ├── EXP099_lag_persistence
+│   │   └── results
+│   ├── EXP100_lag_clusters
+│   │   └── results
+│   ├── EXP101_grand_conjunction
+│   │   ├── README.md
+│   │   └── results
+│   └── EXP_AUDIT
+│       └── results
+├── notebooks
+├── pipelines
+│   ├── __init__.py
+│   ├── build_donki_catalog.py
+│   ├── build_features.py
+│   ├── check_catalog.py
+│   ├── download_cme.py
+│   ├── download_donki.py
+│   ├── download_goes.py
+│   ├── download_noaa.py
+│   ├── join_ftrt.py
+│   ├── merge_catalog.py
+│   ├── rebuild_ftrt_index.py
+│   ├── update_catalog.py
+│   └── validate_catalog.py
+├── reports
+├── requirements.txt
+├── results
+│   ├── csv
+│   │   ├── ftrt_geometry_2020_2026.csv
+│   │   ├── ftrt_geometry_series.csv
+│   │   ├── ftrt_index.csv
+│   │   ├── ftrt_index_v2.csv
+│   │   └── ftrt_silso.csv
+│   ├── plots
+│   └── reports
+├── run.sh
+├── run_pipeline.sh
+├── scripts
+│   ├── build_ftrt_index.py
+│   ├── build_ftrt_index_v2.py
+│   ├── correlation.py
+│   ├── experiment_manifest.py
+│   ├── generate_geometry_dataset.py
+│   ├── import_silso.py
+│   ├── inspect_geometry_dataset.py
+│   ├── merge_silso.py
+│   ├── qc_geometry_dataset.py
+│   ├── run_exp001.py
+│   ├── run_exp002.py
+│   ├── run_exp003.py
+│   ├── run_exp004.py
+│   ├── run_exp005.py
+│   ├── run_exp005_v2.py
+│   ├── run_exp006.py
+│   ├── run_exp007.py
+│   ├── run_exp007_v2.py
+│   ├── run_exp008.py
+│   ├── run_exp009.py
+│   ├── run_exp010.py
+│   ├── run_exp011.py
+│   ├── run_exp012.py
+│   ├── run_exp013.py
+│   ├── run_exp014.py
+│   ├── run_exp015.py
+│   ├── run_exp016.py
+│   ├── run_exp017.py
+│   ├── run_exp018.py
+│   ├── run_exp019.py
+│   ├── run_exp020.py
+│   ├── run_exp021.py
+│   ├── run_exp022.py
+│   ├── run_exp023.py
+│   ├── run_exp024.py
+│   ├── run_exp025.py
+│   ├── run_exp026.py
+│   ├── run_exp027.py
+│   ├── run_exp028.py
+│   ├── run_exp029.py
+│   ├── run_exp030.py
+│   ├── run_exp031.py
+│   ├── run_exp032.py
+│   ├── run_exp033.py
+│   ├── run_exp034.py
+│   ├── run_exp035.py
+│   ├── run_exp036.py
+│   ├── run_exp037.py
+│   ├── run_exp038.py
+│   ├── run_exp039.py
+│   ├── run_exp040.py
+│   ├── run_exp041.py
+│   ├── run_exp042.py
+│   ├── run_exp043.py
+│   ├── run_exp044.py
+│   ├── run_exp045.py
+│   ├── run_exp046.py
+│   ├── run_exp047.py
+│   ├── run_exp048.py
+│   ├── run_exp049.py
+│   ├── run_exp050.py
+│   ├── run_exp051.py
+│   ├── run_exp052.py
+│   ├── run_exp053.py
+│   ├── run_exp054.py
+│   ├── run_exp055.py
+│   ├── run_exp056.py
+│   ├── run_exp057.py
+│   ├── run_exp058.py
+│   ├── run_exp059.py
+│   ├── run_exp060.py
+│   ├── run_exp061.py
+│   ├── run_exp062.py
+│   ├── run_exp063.py
+│   ├── run_exp064.py
+│   ├── run_exp065.py
+│   ├── run_exp066.py
+│   ├── run_exp067.py
+│   ├── run_exp068.py
+│   ├── run_exp069.py
+│   ├── run_exp070.py
+│   ├── run_exp071.py
+│   ├── run_exp072.py
+│   ├── run_exp073.py
+│   ├── run_exp074.py
+│   ├── run_exp075.py
+│   ├── run_exp076.py
+│   ├── run_exp077.py
+│   ├── run_exp078.py
+│   ├── run_exp079.py
+│   ├── run_exp080.py
+│   ├── run_exp081.py
+│   ├── run_exp082.py
+│   ├── run_exp083.py
+│   ├── run_exp084.py
+│   ├── run_exp085.py
+│   ├── run_exp086.py
+│   ├── run_exp087.py
+│   ├── run_exp088.py
+│   ├── run_exp089.py
+│   ├── run_exp090.py
+│   ├── run_exp091.py
+│   ├── run_exp092.py
+│   ├── run_exp093.py
+│   ├── run_exp094.py
+│   ├── run_exp095.py
+│   ├── run_exp096.py
+│   ├── run_exp097.py
+│   ├── run_exp098.py
+│   ├── run_exp099.py
+│   ├── run_exp100.py
+│   ├── run_exp101.py
+│   ├── run_exp_audit.py
+│   ├── run_report.py
+│   ├── test_jpl_state.py
+│   ├── validate_geometry_dataset.py
+│   └── validate_project.py
+├── src
+│   ├── __init__.py
+│   ├── ftrt
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   ├── analysis
+│   │   ├── baricentro.py
+│   │   ├── constants.py
+│   │   ├── datasets
+│   │   ├── dynamics
+│   │   ├── ephemerides.py
+│   │   ├── ephemerides_skyfield.py
+│   │   ├── geometry
+│   │   ├── geometry.py
+│   │   ├── laboratory.py
+│   │   ├── resonance.py
+│   │   ├── test_planets.py
+│   │   ├── test_resonance.py
+│   │   ├── test_vector.py
+│   │   ├── vector.py
+│   │   ├── version.py
+│   │   └── visualization
+│   ├── geometry
+│   │   └── __init__.py
+│   ├── main.py
+│   ├── physics
+│   │   └── __init__.py
+│   ├── utils
+│   │   └── __init__.py
+│   └── validation
+│       └── __init__.py
+├── tests
+│   ├── run_all.py
+│   └── run_scientific.py
+└── validation
+    ├── check_catalog.py
+    ├── check_dates.py
+    ├── check_duplicates.py
+    ├── check_files.py
+    ├── check_ftrt.py
+    ├── check_geometry.py
+    ├── check_join.py
+    └── check_statistics.py
+
+231 directories, 196 files

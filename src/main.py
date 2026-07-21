@@ -1,5 +1,11 @@
-from ftrt.laboratory import FTRTLaboratory
+from datetime import datetime
+import numpy as np
+import scipy
 
-lab = FTRTLaboratory()
-lab.banner()
-lab.roadmap()
+print("FTRT 3.0")
+print("---------------------------")
+print("Fecha:", datetime.utcnow())
+print("NumPy:", np.__version__)
+print("SciPy:", scipy.__version__)
+print()
+print("Laboratorio correctamente inicializado.")

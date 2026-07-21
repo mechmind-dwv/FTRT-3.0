@@ -1,5 +1,5 @@
 # FTRT-3.0 Scientific Report
-Generated: 2026-07-15T10:16:35.807996+00:00
+Generated: 2026-07-21T15:01:24.068255+00:00
 
 ## Pipeline Status
 - catalog: OK
