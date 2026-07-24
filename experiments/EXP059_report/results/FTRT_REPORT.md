@@ -1,8 +1,8 @@
 # FTRT 3.0 Scientific Report
 
-Fecha: 2026-07-21 17:01:22.323928
+Fecha: 2026-07-24 01:49:50.041190
 
-Commit: 21cf54f
+Commit: 91bfeec
 
 ## Estado del laboratorio
 
