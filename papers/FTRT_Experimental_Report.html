@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>FTRT_Experimental_Report</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<h1 id="ftrt-3.0-experimental-report">FTRT-3.0 Experimental Report</h1>
+<p>Generado automáticamente.</p>
+<p>Fecha: 2026-07-24 01:38:08.565919</p>
+<hr />
+<h2 id="exp001_geometry_vs_sunspots">EXP001_geometry_vs_sunspots</h2>
+<h1 id="exp001-geometry-vs-sunspots">EXP001 — Geometry vs Sunspots</h1>
+<h2 id="objetivo">Objetivo</h2>
+<p>Evaluar si las métricas geométricas del sistema FTRT presentan
+asociación estadística con el número diario de manchas solares
+(SILSO).</p>
+<h2 id="variables-geométricas">Variables geométricas</h2>
+<ul>
+<li>lambda_max</li>
+<li>lambda_min</li>
+<li>energia_resonancia</li>
+<li>coherencia_espectral</li>
+<li>entropia_espectral</li>
+<li>estados_fase</li>
+<li>entropia_fase</li>
+<li>concentracion_fase</li>
+</ul>
+<h2 id="variable-observacional">Variable observacional</h2>
+<ul>
+<li>Sunspot Number (SILSO)</li>
+</ul>
+<h2 id="metodología">Metodología</h2>
+<ol type="1">
+<li>Generar dataset FTRT.</li>
+<li>Importar SILSO.</li>
+<li>Unir por fecha.</li>
+<li>Calcular Pearson.</li>
+<li>Calcular Spearman.</li>
+<li>Calcular correlación con desfases.</li>
+<li>Generar tablas y figuras.</li>
+</ol>
+<h2 id="estado">Estado</h2>
+<p>Pendiente de ejecución.</p>
+<hr />
+<h2 id="exp002_lag_analysis">EXP002_lag_analysis</h2>
+<h1 id="exp002-lag-correlation-analysis">EXP002 — Lag Correlation
+Analysis</h1>
+<h2 id="objetivo-1">Objetivo</h2>
+<p>Evaluar la correlación entre las variables geométricas del FTRT y el
+Sunspot Number (SILSO) considerando desfases temporales.</p>
+<h2 id="rango-de-análisis">Rango de análisis</h2>
+<p>-90 … +90 días</p>
+<h2 id="variables">Variables</h2>
+<ul>
+<li>lambda_max</li>
+<li>lambda_min</li>
+<li>energia_resonancia</li>
+<li>coherencia_espectral</li>
+<li>entropia_espectral</li>
+<li>estados_fase</li>
+<li>entropia_fase</li>
+<li>concentracion_fase</li>
+</ul>
+<h2 id="salidas">Salidas</h2>
+<ul>
+<li>Tabla de correlaciones</li>
+<li>Mejor desfase</li>
+<li>Correlación máxima</li>
+<li>Figuras</li>
+</ul>
+<p>Estado: Pendiente.</p>
+<hr />
+<h2 id="exp003_significance">EXP003_significance</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp003_temporal_validation">EXP003_temporal_validation</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp004_montecarlo">EXP004_montecarlo</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp005_prediction_validation">EXP005_prediction_validation</h2>
+<h1 id="exp005-prediction-validation">EXP005 — Prediction
+Validation</h1>
+<h2 id="objetivo-2">Objetivo</h2>
+<p>Evaluar si las variables geométricas FTRT permiten predecir el número
+de manchas solares utilizando validación temporal.</p>
+<h2 id="metodología-1">Metodología</h2>
+<ol type="1">
+<li>Entrenamiento 2020-2024</li>
+<li>Predicción 2025-2026</li>
+<li>Correlación observada</li>
+<li>Error MAE</li>
+<li>Error RMSE</li>
+<li>Coeficiente R²</li>
+</ol>
+<h2 id="estado-1">Estado</h2>
+<p>Pendiente.</p>
+<hr />
+<h2 id="exp006_lag_prediction">EXP006_lag_prediction</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2
+id="exp007_multivariable_prediction">EXP007_multivariable_prediction</h2>
+<h1 id="exp007-multivariable-prediction">EXP007 — Multivariable
+Prediction</h1>
+<h2 id="objetivo-3">Objetivo</h2>
+<p>Evaluar si la combinación de variables geométricas FTRT mejora la
+predicción del número diario de manchas solares respecto al modelo
+base.</p>
+<h2 id="variables-1">Variables</h2>
+<ul>
+<li>lambda_max</li>
+<li>energia_resonancia</li>
+<li>coherencia_espectral</li>
+<li>entropia_espectral</li>
+<li>estados_fase</li>
+<li>entropia_fase</li>
+<li>concentracion_fase</li>
+</ul>
+<h2 id="métricas">Métricas</h2>
+<ul>
+<li>Pearson (r)</li>
+<li>MAE</li>
+<li>RMSE</li>
+<li>R²</li>
+</ul>
+<h2 id="estado-2">Estado</h2>
+<p>Pendiente.</p>
+<hr />
+<h2 id="exp008_index_robustness">EXP008_index_robustness</h2>
+<h1 id="exp008-ftrt-index-robustness">EXP008 — FTRT Index
+Robustness</h1>
+<h2 id="objetivo-4">Objetivo</h2>
+<p>Evaluar la robustez del FTRT Index v2.</p>
+<h2 id="pruebas">Pruebas</h2>
+<ol type="1">
+<li>División temporal:
+<ul>
+<li>2020-2022 entrenamiento</li>
+<li>2023-2026 validación</li>
+</ul></li>
+<li>Métricas:
+<ul>
+<li>Pearson</li>
+<li>Spearman</li>
+<li>MAE</li>
+<li>RMSE</li>
+</ul></li>
+<li>Control:
+<ul>
+<li>Shuffle temporal</li>
+<li>Bootstrap</li>
+</ul></li>
+</ol>
+<h2 id="entrada">Entrada</h2>
+<p>results/csv/ftrt_index_v2.csv</p>
+<h2 id="salida">Salida</h2>
+<p>results/</p>
+<p>Estado: Pendiente de ejecución.</p>
+<hr />
+<h2 id="exp009_walk_forward">EXP009_walk_forward</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp010_regimes">EXP010_regimes</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp011_classification">EXP011_classification</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp013_baselines">EXP013_baselines</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp015_hybrid_model">EXP015_hybrid_model</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp016_ablation">EXP016_ablation</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2
+id="exp017_multivariate_regression">EXP017_multivariate_regression</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp018_feature_significance">EXP018_feature_significance</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp019_temporal_cv">EXP019_temporal_cv</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp020_bootstrap_coefficient">EXP020_bootstrap_coefficient</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2
+id="exp021_autocorrelation_control">EXP021_autocorrelation_control</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp022_block_permutation">EXP022_block_permutation</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp023_cycle_validation">EXP023_cycle_validation</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp051_goes_classification">EXP051_goes_classification</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp052_cme_association">EXP052_cme_association</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp053_bootstrap">EXP053_bootstrap</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp054_permutation">EXP054_permutation</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp055_roc_pr">EXP055_roc_pr</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp056_walk_forward">EXP056_walk_forward</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp057_probabilistic">EXP057_probabilistic</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2
+id="exp058_operational_prediction">EXP058_operational_prediction</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp059_report">EXP059_report</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp060_pipeline">EXP060_pipeline</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp061_join_expansion">EXP061_join_expansion</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp062_auto_download">EXP062_auto_download</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp063_auto_update">EXP063_auto_update</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp064_master_catalog">EXP064_master_catalog</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp065_global_statistics">EXP065_global_statistics</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp066_active_regions">EXP066_active_regions</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp067_prediction_history">EXP067_prediction_history</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp068_global_metrics">EXP068_global_metrics</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp069_final_report">EXP069_final_report</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp070_autonomous_lab">EXP070_autonomous_lab</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp070_full_pipeline">EXP070_full_pipeline</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp071_null_model_validation">EXP071_null_model_validation</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp072_monte_carlo_null">EXP072_monte_carlo_null</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp073_threshold_sweep">EXP073_threshold_sweep</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp074_lag_analysis">EXP074_lag_analysis</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp075_region_persistence">EXP075_region_persistence</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp076_leave_region_out">EXP076_leave_region_out</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp077_region_contribution">EXP077_region_contribution</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2
+id="exp078_region_temporal_memory">EXP078_region_temporal_memory</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2
+id="exp079_region_activity_correlation">EXP079_region_activity_correlation</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp080_composite_risk_index">EXP080_composite_risk_index</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp081_risk_validation">EXP081_risk_validation</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp082_risk_memory_model">EXP082_risk_memory_model</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp083_precursor_window">EXP083_precursor_window</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp084_precursor_persistence">EXP084_precursor_persistence</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp085_active_region_control">EXP085_active_region_control</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp086_rotation_memory">EXP086_rotation_memory</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp087_carrington_memory">EXP087_carrington_memory</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp088_solar_long_memory">EXP088_solar_long_memory</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp089_solar_autocorrelation">EXP089_solar_autocorrelation</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp090_cross_lag">EXP090_cross_lag</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp091_ftrt_goes_crosslag">EXP091_ftrt_goes_crosslag</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp092_goes_energy_crosslag">EXP092_goes_energy_crosslag</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp093_cycle_phase_crosslag">EXP093_cycle_phase_crosslag</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp094_rolling_correlation">EXP094_rolling_correlation</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp095_lag_distribution">EXP095_lag_distribution</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp096_extended_crosslag">EXP096_extended_crosslag</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp097_crosslag_180">EXP097_crosslag_180</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp098_lag_timeline">EXP098_lag_timeline</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp099_lag_persistence">EXP099_lag_persistence</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp100_lag_clusters">EXP100_lag_clusters</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+<h2 id="exp101_grand_conjunction">EXP101_grand_conjunction</h2>
+<h1 id="exp101---grand-conjunction-analysis">EXP101 - Grand Conjunction
+Analysis</h1>
+<h2 id="objetivo-5">Objetivo</h2>
+<p>Analizar si las Grandes Conjunciones Júpiter-Saturno (~19.86 años)
+presentan cambios estadísticamente significativos en:</p>
+<ul>
+<li>Índice FTRT</li>
+<li>Sunspot Number (SSN)</li>
+<li>GOES</li>
+<li>Energía GOES</li>
+<li>CME (si está disponible)</li>
+</ul>
+<p>Periodo inicial: 1770-Actualidad</p>
+<p>Ventanas previstas:</p>
+<p>±180 días ±365 días ±730 días ±1825 días</p>
+<p>Productos:</p>
+<ul>
+<li>grand_conjunctions.csv</li>
+<li>event_windows.csv</li>
+<li>statistics.csv</li>
+<li>summary.txt</li>
+</ul>
+<p>Estado: Preparación del experimento.</p>
+<hr />
+<h2 id="exp_audit">EXP_AUDIT</h2>
+<p><em>Sin documentación.</em></p>
+<hr />
+</body>
+</html>
